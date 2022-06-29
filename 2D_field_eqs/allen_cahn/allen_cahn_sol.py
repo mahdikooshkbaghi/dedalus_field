@@ -40,8 +40,8 @@ u = dist.Field(name='u', bases=(xbasis, ybasis))
 # Problem
 problem = d3.IVP([u], namespace=locals())
 # TODO: Please Check this
-# Eq: dt(u) = a1*lap(u) + a2*u + a3*u^3
-problem.add_equation("dt(u) - a1*lap(u) - a2*u = a3*power(u,3)")
+# Eq: dt(u) = a1*lap(u) + a2*u - a3*u^3
+problem.add_equation("dt(u) - a1*lap(u) - a2*u = -a3*power(u,3)")
 
 # Initial conditions
 # u['g'] = np.exp((1 - y**2) * np.cos(x + np.cos(x) * y**2)) * \
@@ -66,4 +66,4 @@ while solver.proceed:
 
 # Convert storage lists to arrays
 u_array = np.array(u_list)
-np.savez('u', u_array)
+np.save('u', u_array)
