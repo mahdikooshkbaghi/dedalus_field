@@ -2,6 +2,11 @@
 # gitignore template for Jupyter Notebooks
 # website: http://jupyter.org/
 
+# numpy saved file
+*.npy
+# png files
+*.png
+
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 
