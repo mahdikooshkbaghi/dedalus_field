@@ -23,3 +23,5 @@ conda activate dedalus
 ```bash
 pip install -e .
 ```
+
+- Check the gpg2 key
